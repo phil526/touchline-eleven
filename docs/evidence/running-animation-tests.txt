@@ -1,0 +1,23 @@
+✔ resting soles remain close to turf and gait does not drift with clock time (54.7331ms)
+✔ measured travel advances gait while frozen positions and restart teleports do not (10.1718ms)
+✔ running stance anchors reduce foot sliding and swing feet clear the turf (11.7739ms)
+✔ turning introduces bounded smooth lean instead of snapping the torso (4.437ms)
+✔ free-running bodies and knee bends face measured travel in every pitch direction (51.6783ms)
+✔ running swing recovers each heel behind the hip before extending forwards to plant (17.993ms)
+✔ kicks, charging and close control retain their intentional facing instead of following travel (13.6469ms)
+✔ small stationary snapshot corrections do not turn a player towards the correction (2.9076ms)
+✔ running boots and receiving contacts keep their whole sole above the turf (14.2037ms)
+✔ passing and shooting have contact, follow-through and recovery stages (3.8635ms)
+✔ receive contacts use alternating feet without changing the authoritative ball or player (1.4546ms)
+✔ saves retain their captured direction after ball catch or parry (1.6245ms)
+✔ older snapshots without new animation metadata remain finite for all action types (8.3344ms)
+✔ expired slide, save and celebration metadata release the pose back to locomotion (6.956ms)
+✔ slide drops to one hip, extends a low boot and recovers without changing root motion (3.1154ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 524.2951

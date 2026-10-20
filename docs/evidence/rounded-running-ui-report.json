@@ -1,0 +1,217 @@
+{
+  "checkedAt": "2026-10-19T19:01:27.148Z",
+  "rows": [
+    {
+      "name": "rounded-title",
+      "width": 291.5,
+      "height": 57,
+      "radius": "999px",
+      "x": 303,
+      "y": 589.109375,
+      "overflow": false,
+      "viewport": {
+        "height": 900,
+        "width": 1366
+      }
+    },
+    {
+      "name": "rounded-setup",
+      "width": 357.5,
+      "height": 217,
+      "radius": "20px",
+      "x": 427.125,
+      "y": 286.796875,
+      "overflow": false,
+      "viewport": {
+        "height": 900,
+        "width": 1366
+      }
+    },
+    {
+      "name": "rounded-settings-close",
+      "width": 32,
+      "height": 32,
+      "radius": "50%",
+      "x": 997,
+      "y": 79.46875,
+      "overflow": false,
+      "viewport": {
+        "height": 900,
+        "width": 1366
+      }
+    },
+    {
+      "name": "third-person-running",
+      "width": 42,
+      "height": 42,
+      "radius": "50%",
+      "x": 1283.03125,
+      "y": 28,
+      "overflow": false,
+      "viewport": {
+        "height": 900,
+        "width": 1366
+      }
+    },
+    {
+      "name": "actual sprint input",
+      "width": 1366,
+      "height": 900,
+      "metres": 7.4771813848263635,
+      "speed": 7.9926835999999994,
+      "viewport": {
+        "height": 900,
+        "width": 1366
+      }
+    },
+    {
+      "name": "rounded-pause",
+      "width": 354,
+      "height": 45,
+      "radius": "999px",
+      "x": 506,
+      "y": 378.890625,
+      "overflow": false,
+      "viewport": {
+        "height": 900,
+        "width": 1366
+      }
+    },
+    {
+      "name": "pause, nested settings and resume",
+      "width": 1366,
+      "height": 900,
+      "resumed": true,
+      "viewport": {
+        "height": 900,
+        "width": 1366
+      }
+    },
+    {
+      "name": "rounded-title",
+      "width": 240.296875,
+      "height": 45,
+      "radius": "999px",
+      "x": 107,
+      "y": 242.625,
+      "overflow": false,
+      "viewport": {
+        "height": 390,
+        "width": 844
+      }
+    },
+    {
+      "name": "rounded-setup",
+      "width": 357.5,
+      "height": 170,
+      "radius": "20px",
+      "x": 406.25,
+      "y": 214.796875,
+      "overflow": false,
+      "viewport": {
+        "height": 390,
+        "width": 844
+      }
+    },
+    {
+      "name": "rounded-settings-close",
+      "width": 32,
+      "height": 32,
+      "radius": "50%",
+      "x": 736,
+      "y": 40.40625,
+      "overflow": false,
+      "viewport": {
+        "height": 390,
+        "width": 844
+      }
+    },
+    {
+      "name": "third-person-running",
+      "width": 33,
+      "height": 33,
+      "radius": "50%",
+      "x": 785.6875,
+      "y": 12,
+      "overflow": false,
+      "viewport": {
+        "height": 390,
+        "width": 844
+      }
+    },
+    {
+      "name": "actual sprint input",
+      "width": 844,
+      "height": 390,
+      "metres": 5.626880362222222,
+      "speed": 7.9926835999999994,
+      "viewport": {
+        "height": 390,
+        "width": 844
+      }
+    },
+    {
+      "name": "rounded-pause",
+      "width": 370,
+      "height": 40,
+      "radius": "999px",
+      "x": 237,
+      "y": 178.890625,
+      "overflow": false,
+      "viewport": {
+        "height": 390,
+        "width": 844
+      }
+    },
+    {
+      "name": "pause, nested settings and resume",
+      "width": 844,
+      "height": 390,
+      "resumed": true,
+      "viewport": {
+        "height": 390,
+        "width": 844
+      }
+    },
+    {
+      "name": "rounded-title",
+      "width": 351,
+      "height": 49,
+      "radius": "999px",
+      "x": 19.5,
+      "y": 519.828125,
+      "overflow": false,
+      "viewport": {
+        "height": 844,
+        "width": 390
+      }
+    },
+    {
+      "name": "rounded-setup",
+      "width": 168,
+      "height": 217,
+      "radius": "20px",
+      "x": 202.5,
+      "y": 271.796875,
+      "overflow": false,
+      "viewport": {
+        "height": 844,
+        "width": 390
+      }
+    },
+    {
+      "name": "rounded-settings-close",
+      "width": 32,
+      "height": 32,
+      "radius": "50%",
+      "x": 320,
+      "y": 67.640625,
+      "overflow": false,
+      "viewport": {
+        "height": 844,
+        "width": 390
+      }
+    }
+  ],
+  "errors": []
+}

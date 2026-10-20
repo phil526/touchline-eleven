@@ -1,0 +1,145 @@
+/* The title's broadcast palette continues through every menu and dialog. */
+:root {
+  --menu-ink: #eaf7ff;
+  --menu-muted: #b3cbed;
+  --menu-cyan: #8ceaff;
+  --menu-line: #82c9fc6e;
+  --menu-silver: linear-gradient(180deg, #fff 12%, #d4e5fa 65%, #99b5da);
+  --menu-primary: linear-gradient(180deg, #f8455d, #c41438);
+  --menu-primary-hover: linear-gradient(180deg, #ff6078, #d51b40);
+  --menu-secondary: linear-gradient(180deg, #153c7be8, #0b2056f5);
+}
+
+#setup-screen, #online-screen, #quit-screen {
+  max-width: none;
+  color: var(--menu-ink);
+  background: linear-gradient(90deg, #030b2ef2 0%, #0b245bdc 60%, #020a298c),
+    url('../assets/title-stadium.svg') center / cover no-repeat #020a29;
+}
+#quit-screen::before { background: #f8455d; box-shadow: 0 0 18px #ef315b70; }
+#quit-screen p { color: var(--menu-muted); }
+
+dialog {
+  color: var(--menu-ink);
+  background: radial-gradient(ellipse at 0 0, #2468bb38, transparent 70%),
+    linear-gradient(155deg, #102c64fa, #060f35fc 72%);
+  border: 1px solid var(--menu-line);
+  border-top: 3px solid #e7f6ff;
+  box-shadow: 0 0 0 5px #07163e66, 0 24px 90px #010419b3, inset 0 1px 25px #4797f31a;
+  color-scheme: dark;
+}
+dialog::backdrop { background: #020920c7; backdrop-filter: blur(8px); }
+:is(#setup-screen, #online-screen, #quit-screen, dialog) h2 {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
+  font-weight: 700;
+  color: var(--menu-ink);
+  background: var(--menu-silver);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 16px #4188ff18;
+}
+:is(#menu, dialog, #practice-hud) .eyebrow { color: var(--menu-cyan); }
+:is(#menu, dialog) .subheading,
+:is(#menu, dialog) .hint,
+:is(#menu, dialog) label { color: var(--menu-muted); }
+
+.primary, .secondary {
+  border-radius: 999px;
+  box-shadow: inset 0 1px #e8f7ff2b, 0 5px 16px #0003;
+}
+#home-screen .hero-actions .large { border-radius: 999px; }
+:is(#menu, dialog, #practice-hud, #masthead) :is(.text-button, .icon-button) { border-radius: 999px; }
+.dialog-close { border-radius: 50%; width: 32px; height: 32px; padding: 0; }
+.dialog-close:hover { background: #214a8770; }
+.primary { background: var(--menu-primary); border-color: #ff8b9b; color: #fff; }
+.primary:hover { background: var(--menu-primary-hover); box-shadow: 0 0 24px #f9285940; }
+.secondary { background: var(--menu-secondary); border-color: var(--menu-line); color: var(--menu-ink); }
+.secondary:hover { background: linear-gradient(180deg, #2361b4, #16376e); border-color: #9eefff; }
+:is(#menu, dialog, #practice-hud, #masthead) .text-button { color: #d0e3fc; }
+:is(#menu, dialog, #practice-hud, #masthead) .text-button:hover { color: var(--menu-cyan); }
+:is(#menu, dialog, #practice-hud) .text-button span { color: var(--menu-cyan); }
+.dialog-close { color: #d4e8ff; }
+.dialog-close:hover { color: var(--menu-cyan); }
+:is(button, a, input, select):focus-visible { outline-color: #a8f5ff; }
+
+:is(#menu, dialog) select,
+:is(#menu, dialog) input:not([type=checkbox]):not([type=range]) {
+  color: #f0f7ff;
+  background: #081b48;
+  border-color: #8abef352;
+  box-shadow: inset 0 1px 6px #01061d33;
+  color-scheme: dark;
+}
+:is(#menu, dialog) select:hover,
+:is(#menu, dialog) input:not([type=range]):hover { border-color: #91ddff; }
+:is(#menu, dialog) input::placeholder { color: #9ab6d8; opacity: 1; }
+:is(#menu, dialog) input[type=range],
+:is(#menu, dialog) input[type=checkbox] { accent-color: #7fe0ff; }
+.camera-settings { background: linear-gradient(140deg, #183e8359, #050f312e); border-color: #8abef33b; }
+.camera-settings legend, .setting-value { color: var(--menu-cyan); }
+
+#setup-screen .club-card {
+  border-radius: 20px;
+  background: linear-gradient(135deg, #194584e8, #08173bed);
+  border-color: #8abef352;
+  color: var(--menu-ink);
+}
+#setup-screen .club-card:hover { border-color: #9eefff; }
+#setup-screen .club-card.selected {
+  border-color: #8ceaff;
+  box-shadow: inset 0 -3px #ee3158, 0 0 24px #2d8dff24;
+}
+#setup-screen .club-code, #setup-screen .club-style { color: #b3cbed; }
+#setup-screen .select-tick { color: var(--menu-cyan); }
+.setup-footer { border-top-color: #8abef33b; color: #b3cbed; }
+.setup-footer b { color: var(--menu-cyan); }
+
+.online-panel { background: linear-gradient(150deg, #102c64ee, #060f35f5); border-color: var(--menu-line); }
+.room-buttons > span, .room-label { color: var(--menu-muted); }
+.room-label { border-top-color: #8abef33b; }
+.room-label strong { color: var(--menu-cyan); }
+.participant { background: #214a873d; }
+.participant span, .connection { color: #b2e6f7; }
+.error { color: #ff9eb2; }
+dialog th { color: var(--menu-cyan); }
+dialog th, dialog td { border-bottom-color: #8abef330; }
+dialog td:first-child { color: #e5f1ff; }
+dialog tbody tr:nth-child(even) { background: #27539714; }
+.result-score { color: #d4e8ff; }
+.result-score strong { color: var(--menu-cyan); }
+.result-stats { color: #b3cbed; }
+
+#practice-hud {
+  background: linear-gradient(135deg, #102c64f2, #060f35f5);
+  border-left-color: #82dcff;
+  box-shadow: 0 6px 24px #01041966;
+}
+#practice-title { color: var(--menu-ink); }
+#practice-objective { color: #d4e8ff; }
+#practice-feedback { color: #b1eaff; }
+.practice-counters { color: var(--menu-muted); }
+.practice-counters strong { color: #f0f7ff; }
+.pause-button { background: #0b2358e6; border-color: #82c9fc6e; color: #eaf7ff; border-radius: 50%; }
+
+#loading, #portrait-prompt { color: var(--menu-ink); background: radial-gradient(ellipse at 50% 30%, #163d7c, #030b29 72%); }
+.loading-mark { color: #d4e8ff; text-shadow: 0 0 26px #36baff40; }
+#loading > span:last-child, #portrait-prompt span { color: var(--menu-muted); }
+#toast { color: #eaf7ff; background: #102c64f5; border: 1px solid #82c9fc6e; border-left: 3px solid #ef3158; }
+@media (max-width: 480px) {
+  .room-buttons { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; }
+  #create-room, .room-buttons > span { grid-column: 1 / -1; }
+  .room-buttons > span { text-align: center; }
+  .room-buttons #room-code { width: 100%; }
+  #join-room { min-width: 90px; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  dialog { padding: 20px 24px; }
+  #pause-dialog h2 { font-size: 32px; margin: 10px 0 8px; }
+  #pause-dialog .subheading { margin-bottom: 14px; }
+  #pause-dialog .dialog-actions { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px; margin-top: 14px; }
+  #pause-dialog .dialog-actions button { min-height: 40px; padding: 10px 12px; font-size: 11px; }
+  #resume { grid-column: 1 / -1; }
+}
+@media (forced-colors: active) {
+  :is(#setup-screen, #online-screen, #quit-screen, dialog) h2 { -webkit-text-fill-color: CanvasText; background: none; }
+}

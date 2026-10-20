@@ -1,0 +1,70 @@
+{
+  "testedAt": "2026-10-19T16:07:57.873Z",
+  "browser": "155.0.8059.82",
+  "checks": [
+    {
+      "name": "Stored first-person preferences migrate to third-person",
+      "status": "passed"
+    },
+    {
+      "name": "All three camera modes and height/zoom/FOV controls persist after reload",
+      "status": "passed",
+      "saved": {
+        "camera-height": "0.9",
+        "camera-zoom": "0.85",
+        "camera-fov": "80",
+        "camera-mode": "third-person"
+      }
+    },
+    {
+      "name": "Broadcast height raises the view and TV zoom narrows the lens",
+      "status": "passed",
+      "lowHeight": 40.1227709664001,
+      "highHeight": 56.744088961205996,
+      "wideFov": 48.90849469856981,
+      "closeFov": 38.749920525897814
+    },
+    {
+      "name": "Camera settings open from pause and return to the same paused match",
+      "status": "passed"
+    },
+    {
+      "name": "Third-person drag orbits the visible avatar and forward movement follows that view",
+      "status": "passed",
+      "travel": 1.8930305555555544,
+      "alignment": 1,
+      "yawBefore": 0,
+      "yawAfter": 1.1087999572753906
+    },
+    {
+      "name": "Third-person retains the visible avatar and follows behind the new selection after switching",
+      "status": "passed",
+      "switchedId": 4
+    },
+    {
+      "name": "Cancel quit preserves match identity, score and paused clock, then resumes",
+      "status": "passed"
+    },
+    {
+      "name": "Confirm quit clears offline state/input and the quit screen returns home",
+      "status": "passed"
+    },
+    {
+      "name": "Main-menu Quit game uses the same cancellable confirmation",
+      "status": "passed"
+    },
+    {
+      "name": "Cancel online quit preserves the live connection while authority continues",
+      "status": "passed"
+    },
+    {
+      "name": "Confirm online quit releases transport and cannot resurrect the match",
+      "status": "passed"
+    },
+    {
+      "name": "No browser JavaScript exceptions",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,39 @@
+{
+  "testedAt": "2026-10-19T21:04:28.534Z",
+  "checks": [
+    {
+      "name": "Real keyboard acceleration, reversal and stopping retain a tightly controlled ball",
+      "status": "passed",
+      "maximumGap": 0.7047465459067843
+    },
+    {
+      "name": "Keyboard Close Control puts the body between defender and ball and releases cleanly",
+      "status": "passed"
+    },
+    {
+      "name": "Penalty waits, retains goal aim, holds maximum power and safely cancels on pause before a fresh shot",
+      "status": "passed"
+    },
+    {
+      "name": "Emulated controller aim and B release take the penalty",
+      "status": "passed"
+    },
+    {
+      "name": "Touch Control activates shielding and shows its active state",
+      "status": "passed"
+    },
+    {
+      "name": "Simultaneous touch aim and Shoot hold at full penalty power until release",
+      "status": "passed"
+    },
+    {
+      "name": "Small-phone third-person penalty power stays below play and clear of touch buttons",
+      "status": "passed"
+    },
+    {
+      "name": "No browser JavaScript exceptions",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

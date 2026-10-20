@@ -1,0 +1,27 @@
+✔ a charged human restart cancels when network input becomes stale, then accepts fresh input (444.6664ms)
+✔ settings and intentions reject non-finite, foreign, and oversized values (3.5183ms)
+✔ slide intentions are consumed once and stale sequence replay cannot enqueue another slide (92.7285ms)
+✔ browser client preserves a short slide pulse until one flush and sends neutral slide thereafter (5.4985ms)
+✔ shot modifiers survive transport while held and clear on button-up (2.5933ms)
+✔ held pass intentions persist between flushes and a sub-flush tap retains one release fallback (2.097ms)
+✔ two clients get the same authority, settings, mapped teams and a strict two-slot room (112.8053ms)
+✔ settings invalidate readiness; inputs are sequenced, acknowledged and expire (265.2387ms)
+✔ malformed JSON and client-supplied goals never alter server-owned score (10.7272ms)
+✔ token reconnect retains match, reserved slot, sequence and score (76.7607ms)
+✔ disconnect grace ends the match authoritatively without inventing a goal (116.2405ms)
+✔ mutual rematch alone creates a fresh authoritative match (47.6584ms)
+✔ HTTP health serves only configured static root; room expiry clears a dead lobby (147.677ms)
+✔ oversized messages and sustained floods close only the offending sockets (54.4974ms)
+✔ browser network helper coalesces actions, preserves authority and automatically rejoins (528.9129ms)
+✔ ordered 35–120 ms one-way latency and jitter retain matching authority and input acknowledgements (1743.0088ms)
+ℹ 23 matching snapshots under ordered 35–120 ms one-way jitter; probe RTT 175 ms.
+✔ silent match snapshots trigger same-room recovery while lobby and full-time remain stable (1995.5768ms)
+✔ connection deadlines reject silent handshakes; cancellation settles and prevents late reopen (216.8238ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6160.7358

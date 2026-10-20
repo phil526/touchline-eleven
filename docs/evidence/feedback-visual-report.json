@@ -1,0 +1,153 @@
+{
+  "reports": [
+    {
+      "width": 1280,
+      "height": 720,
+      "fontDisplay": true,
+      "fontItalic": true,
+      "title": {
+        "left": 51.1875,
+        "right": 693.78125,
+        "top": 177,
+        "bottom": 404.703125
+      },
+      "play": {
+        "left": 51.1875,
+        "right": 256.1875,
+        "top": 507.703125,
+        "bottom": 564.703125
+      },
+      "online": {
+        "left": 268.1875,
+        "right": 473.1875,
+        "top": 507.703125,
+        "bottom": 564.703125
+      },
+      "nav": {
+        "left": 835.84375,
+        "right": 1228.8125,
+        "top": 25,
+        "bottom": 65
+      },
+      "brand": {
+        "left": 51.1875,
+        "right": 286.21875,
+        "top": 25.5,
+        "bottom": 64.5
+      },
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "fontDisplay": true,
+      "fontItalic": true,
+      "title": {
+        "left": 15.59375,
+        "right": 374.40625,
+        "top": 175.46875,
+        "bottom": 334.484375
+      },
+      "play": {
+        "left": 15.59375,
+        "right": 275.59375,
+        "top": 428.484375,
+        "bottom": 485.484375
+      },
+      "online": {
+        "left": 15.59375,
+        "right": 275.59375,
+        "top": 497.484375,
+        "bottom": 554.484375
+      },
+      "nav": {
+        "left": 223.78125,
+        "right": 370.5,
+        "top": 25,
+        "bottom": 65
+      },
+      "brand": {
+        "left": 19.5,
+        "right": 166.125,
+        "top": 29.5,
+        "bottom": 60.5
+      },
+      "overflow": false
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "fontDisplay": true,
+      "fontItalic": true,
+      "title": {
+        "left": 33.75,
+        "right": 391.765625,
+        "top": 82,
+        "bottom": 201.25
+      },
+      "play": {
+        "left": 33.75,
+        "right": 198.75,
+        "top": 252.25,
+        "bottom": 297.25
+      },
+      "online": {
+        "left": 210.75,
+        "right": 389.09375,
+        "top": 252.25,
+        "bottom": 297.25
+      },
+      "nav": {
+        "left": 598.828125,
+        "right": 810.25,
+        "top": 10,
+        "bottom": 50
+      },
+      "brand": {
+        "left": 33.75,
+        "right": 268.78125,
+        "top": 10.5,
+        "bottom": 49.5
+      },
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "fontDisplay": true,
+      "fontItalic": true,
+      "title": {
+        "left": 12.796875,
+        "right": 307.203125,
+        "top": 104,
+        "bottom": 226.359375
+      },
+      "play": {
+        "left": 12.796875,
+        "right": 272.796875,
+        "top": 292.359375,
+        "bottom": 343.359375
+      },
+      "online": {
+        "left": 12.796875,
+        "right": 272.796875,
+        "top": 355.359375,
+        "bottom": 406.359375
+      },
+      "nav": {
+        "left": 159.953125,
+        "right": 304,
+        "top": 15,
+        "bottom": 56
+      },
+      "brand": {
+        "left": 16,
+        "right": 159.953125,
+        "top": 20,
+        "bottom": 51
+      },
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

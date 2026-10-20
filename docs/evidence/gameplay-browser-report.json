@@ -1,0 +1,63 @@
+{
+  "testedAt": "2026-10-19T15:18:30.160Z",
+  "browser": "155.0.8059.82",
+  "checks": [
+    {
+      "name": "Saved camera mode, height, zoom and first-person FOV survive gameplay reload",
+      "status": "passed",
+      "saved": {
+        "mode": "telebroadcast",
+        "height": "0.65",
+        "zoom": "0.3",
+        "fov": "85"
+      }
+    },
+    {
+      "name": "Live receiver marker changes to the team-mate in the aimed direction",
+      "status": "passed",
+      "rightTarget": 8,
+      "upTarget": 7
+    },
+    {
+      "name": "The actual short pass agrees with the live receiver preview",
+      "status": "passed",
+      "receiver": 8,
+      "time": 1.383333333333332,
+      "vx": 15.769912218557174,
+      "vz": -1.4933602966472344,
+      "owner": null
+    },
+    {
+      "name": "An unopposed weighted ground pass reaches its intended receiver",
+      "status": "passed",
+      "elapsed": 1.7499999999999938,
+      "completed": 1,
+      "gap": 0.49979718659867794
+    },
+    {
+      "name": "Ctrl plus movement keeps the ball close without disabling movement",
+      "status": "passed",
+      "travel": 3.2845878888888875,
+      "maxGap": 0.5706904281721239
+    },
+    {
+      "name": "Sprint drains stamina and releasing modifiers/movement clears the right controls",
+      "status": "passed",
+      "speed": 7.808073199999999,
+      "stamina": 0.9595000000000011
+    },
+    {
+      "name": "Receiver preview disappears when the opponent owns the ball",
+      "status": "passed"
+    },
+    {
+      "name": "First-person camera retains saved FOV and selected-player visibility after gameplay",
+      "status": "passed"
+    },
+    {
+      "name": "No browser JavaScript exceptions",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

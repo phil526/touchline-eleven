@@ -1,0 +1,278 @@
+{
+  "testedAt": "2026-10-19T22:34:05.123Z",
+  "checks": [
+    {
+      "name": "Penalty taker and goalkeeper use detailed models with a bounded mesh budget",
+      "status": "passed",
+      "details": {
+        "fps": 11,
+        "frameMs": 91.2,
+        "drawCalls": 66,
+        "triangles": 199470,
+        "playerTriangles": 69800,
+        "playerDrawCalls": 34,
+        "nearPlayerModels": 2,
+        "pixelRatio": 1,
+        "quality": "high",
+        "resolutionScale": 1,
+        "shadows": true,
+        "width": 1366,
+        "height": 900,
+        "cameraMode": "penalty",
+        "cameraFov": 48,
+        "cameraPosition": {
+          "x": 34,
+          "y": 3.2,
+          "z": -1.4
+        },
+        "cameraTarget": {
+          "x": 50.5,
+          "y": 0.7,
+          "z": 0
+        },
+        "cameraYaw": 0,
+        "cameraPitch": -0.15,
+        "cameraForward": {
+          "x": 1,
+          "z": 0
+        },
+        "hiddenPlayerId": null,
+        "cameraHeight": 0,
+        "cameraZoom": 0,
+        "passTargetId": null,
+        "passTargetName": null,
+        "passCharge": 0,
+        "passAimTarget": null,
+        "shotAimVisible": true,
+        "shotAimKind": "normal",
+        "shotAimCurl": 0,
+        "shotAimPath": [
+          {
+            "x": 41.5,
+            "y": 0.11,
+            "z": 0
+          },
+          {
+            "x": 42.888933786563896,
+            "y": 0.3007979447129495,
+            "z": 0
+          },
+          {
+            "x": 44.27543906456607,
+            "y": 0.4670708894258991,
+            "z": 0
+          },
+          {
+            "x": 45.65952008018003,
+            "y": 0.6088188341388486,
+            "z": 0
+          },
+          {
+            "x": 47.04118107215496,
+            "y": 0.7260417788517982,
+            "z": 0
+          },
+          {
+            "x": 48.42042627182873,
+            "y": 0.8187397235647478,
+            "z": 0
+          },
+          {
+            "x": 49.79725990314084,
+            "y": 0.8869126682776973,
+            "z": 0
+          },
+          {
+            "x": 51.17168618264535,
+            "y": 0.930560612990647,
+            "z": 0
+          },
+          {
+            "x": 52.54370931952384,
+            "y": 0.9496835577035965,
+            "z": 0
+          },
+          {
+            "x": 52.61,
+            "y": 0.9498176917354101,
+            "z": 0
+          }
+        ],
+        "shotAimTarget": {
+          "x": 52.61,
+          "y": 0.95,
+          "z": 0
+        },
+        "shotAimOrigin": {
+          "x": 41.5,
+          "y": 0.11,
+          "z": 0
+        },
+        "shotAimPower": 0.55,
+        "adaptive": {
+          "quality": "high",
+          "resolutionScale": 1,
+          "shadows": true,
+          "tier": 0,
+          "automatic": false
+        }
+      }
+    },
+    {
+      "name": "Full match uses the same detailed rig while the controlled player runs",
+      "status": "passed",
+      "details": {
+        "fps": 28,
+        "frameMs": 35.5,
+        "drawCalls": 77,
+        "triangles": 263394,
+        "playerTriangles": 133308,
+        "playerDrawCalls": 36,
+        "nearPlayerModels": 12,
+        "pixelRatio": 1,
+        "quality": "high",
+        "resolutionScale": 1,
+        "shadows": true,
+        "width": 1366,
+        "height": 900,
+        "cameraMode": "third-person",
+        "cameraFov": 80,
+        "cameraPosition": {
+          "x": 2.8148377903923016,
+          "y": 4.769084527477489,
+          "z": 0
+        },
+        "cameraTarget": {
+          "x": 13.410471400887438,
+          "y": 1.05,
+          "z": 0
+        },
+        "cameraYaw": 0,
+        "cameraPitch": -0.33756684944555004,
+        "cameraForward": {
+          "x": 1,
+          "z": 0
+        },
+        "hiddenPlayerId": null,
+        "cameraHeight": 0.45,
+        "cameraZoom": 0.5,
+        "passTargetId": null,
+        "passTargetName": null,
+        "passCharge": 0,
+        "passAimTarget": {
+          "x": 29.446599166666683,
+          "y": 0.11,
+          "z": 0
+        },
+        "shotAimVisible": false,
+        "shotAimKind": null,
+        "shotAimCurl": 0,
+        "shotAimPath": null,
+        "shotAimTarget": null,
+        "shotAimOrigin": null,
+        "shotAimPower": 0,
+        "adaptive": {
+          "quality": "high",
+          "resolutionScale": 1,
+          "shadows": true,
+          "tier": 0,
+          "automatic": false
+        }
+      }
+    },
+    {
+      "name": "Broadcast distance reduces geometry while retaining all 22 players",
+      "status": "passed",
+      "details": {
+        "fps": 23,
+        "frameMs": 44.2,
+        "drawCalls": 48,
+        "triangles": 186012,
+        "playerTriangles": 56800,
+        "playerDrawCalls": 18,
+        "nearPlayerModels": 0,
+        "pixelRatio": 1,
+        "quality": "high",
+        "resolutionScale": 1,
+        "shadows": true,
+        "width": 1366,
+        "height": 900,
+        "cameraMode": "telebroadcast",
+        "cameraFov": 35,
+        "cameraPosition": {
+          "x": 11.808346633009506,
+          "y": 24.116500000000002,
+          "z": 41.561152997689476
+        },
+        "cameraTarget": {
+          "x": 11.808346633009506,
+          "y": 0,
+          "z": -0.03884700231052848
+        },
+        "cameraYaw": -1.5707963267948966,
+        "cameraPitch": -0.5253769127716816,
+        "cameraForward": {
+          "x": 6.123233995736766e-17,
+          "z": -1
+        },
+        "hiddenPlayerId": null,
+        "cameraHeight": 0.45,
+        "cameraZoom": 0.5,
+        "passTargetId": 8,
+        "passTargetName": "Jude Rowan",
+        "passCharge": 0,
+        "passAimTarget": {
+          "x": 10.666568639966224,
+          "y": 0.11,
+          "z": -24.972344405823527
+        },
+        "shotAimVisible": false,
+        "shotAimKind": null,
+        "shotAimCurl": 0,
+        "shotAimPath": null,
+        "shotAimTarget": null,
+        "shotAimOrigin": null,
+        "shotAimPower": 0,
+        "adaptive": {
+          "quality": "high",
+          "resolutionScale": 1,
+          "shadows": true,
+          "tier": 0,
+          "automatic": false
+        }
+      }
+    },
+    {
+      "name": "Front, back and three-quarter inspection covers both kits and keeper",
+      "status": "passed",
+      "details": {
+        "shapes": [
+          "jersey",
+          "shirtStripe",
+          "shirtBand",
+          "shorts",
+          "sleeve",
+          "upperArm",
+          "forearm",
+          "hand",
+          "thigh",
+          "sock",
+          "sockBand",
+          "collar",
+          "head",
+          "crop",
+          "sweep",
+          "curls",
+          "boot",
+          "round"
+        ],
+        "players": 5
+      }
+    },
+    {
+      "name": "No browser JavaScript exceptions",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

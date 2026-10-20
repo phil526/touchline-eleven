@@ -1,0 +1,27 @@
+{
+  "testedAt": "2026-10-19T18:16:07.902Z",
+  "browser": "155.0.8059.82",
+  "checks": [
+    {
+      "name": "Title typography and actions fit 1440x900",
+      "status": "passed"
+    },
+    {
+      "name": "Title typography and actions fit 1280x720",
+      "status": "passed"
+    },
+    {
+      "name": "Title typography and actions fit 390x844",
+      "status": "passed"
+    },
+    {
+      "name": "Title typography and actions fit 844x390",
+      "status": "passed"
+    },
+    {
+      "name": "Title typography and actions fit 320x568",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

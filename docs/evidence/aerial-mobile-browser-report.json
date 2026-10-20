@@ -1,0 +1,63 @@
+{
+  "testedAt": "2026-10-19T19:46:39.891Z",
+  "checks": [
+    {
+      "name": "Keyboard timed header records one real shot",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard timed volley records one real shot",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard C heads clear upfield without adding a shot",
+      "status": "passed"
+    },
+    {
+      "name": "Controller B performs a timed header",
+      "status": "passed"
+    },
+    {
+      "name": "Controller R3 performs a headed clearance",
+      "status": "passed"
+    },
+    {
+      "name": "Sustained slow-frame samples lower the actual canvas resolution while retaining all 22 players",
+      "status": "passed",
+      "pixelRatio": 0.5525
+    },
+    {
+      "name": "Turning automatic adjustment off restores chosen graphics",
+      "status": "passed"
+    },
+    {
+      "name": "Touch layout drag/resize saves locally; Cancel preserves the saved layout",
+      "status": "passed"
+    },
+    {
+      "name": "Overlapping controls cannot accidentally be saved",
+      "status": "passed"
+    },
+    {
+      "name": "Saved control sizes and positions survive reload and apply to live controls",
+      "status": "passed"
+    },
+    {
+      "name": "Repositioned touch controls perform headers, volleys and aerial clearances",
+      "status": "passed"
+    },
+    {
+      "name": "Saved layout adapts safely to a smaller phone viewport",
+      "status": "passed"
+    },
+    {
+      "name": "Reset creates a usable compact phone layout",
+      "status": "passed"
+    },
+    {
+      "name": "No browser JavaScript errors",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

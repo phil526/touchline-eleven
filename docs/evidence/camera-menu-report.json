@@ -1,0 +1,66 @@
+{
+  "testedAt": "2026-10-19T14:39:59.037Z",
+  "browser": "155.0.8059.82",
+  "checks": [
+    {
+      "name": "All three camera modes and height/zoom/FOV controls persist after reload",
+      "status": "passed",
+      "saved": {
+        "camera-height": "0.9",
+        "camera-zoom": "0.85",
+        "camera-fov": "80",
+        "camera-mode": "first-person"
+      }
+    },
+    {
+      "name": "Broadcast height raises the view and TV zoom narrows the lens",
+      "status": "passed",
+      "lowHeight": 41.158876410061964,
+      "highHeight": 45.48062286140088,
+      "wideFov": 46.210135046441714,
+      "closeFov": 40.20702634413101
+    },
+    {
+      "name": "Camera settings open from pause and return to the same paused match",
+      "status": "passed"
+    },
+    {
+      "name": "First-person drag changes view and forward movement follows that view",
+      "status": "passed",
+      "travel": 0.842191207251328,
+      "alignment": 0.9290033504258655,
+      "yawBefore": 0,
+      "yawAfter": 1.1087999572753906
+    },
+    {
+      "name": "First-person hides the controlled rig and updates it after player switching",
+      "status": "passed",
+      "switchedId": 5
+    },
+    {
+      "name": "Cancel quit preserves match identity, score and paused clock, then resumes",
+      "status": "passed"
+    },
+    {
+      "name": "Confirm quit clears offline state/input and the quit screen returns home",
+      "status": "passed"
+    },
+    {
+      "name": "Main-menu Quit game uses the same cancellable confirmation",
+      "status": "passed"
+    },
+    {
+      "name": "Cancel online quit preserves the live connection while authority continues",
+      "status": "passed"
+    },
+    {
+      "name": "Confirm online quit releases transport and cannot resurrect the match",
+      "status": "passed"
+    },
+    {
+      "name": "No browser JavaScript exceptions",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,41 @@
+/* Original broadcast treatment, inspired by the user's blue stadium reference. */
+body:not(.playing) #masthead{background:linear-gradient(180deg,#030a28ed,#071535c9);border-bottom:1px solid #80ccff35;padding-top:20px;padding-bottom:20px}
+body:not(.playing) .brandmark{border-color:#72dfff;color:#d5f5ff;background:linear-gradient(135deg,#1267c9,#081d57);box-shadow:0 0 20px #138cff35;transform:skew(-7deg)}
+body:not(.playing) #masthead .text-button span{color:#6cdbff}
+body:not(.playing) #masthead .edition{color:#a8c5ed;letter-spacing:.15em}
+body:not(.playing) #masthead button:focus-visible, #home-screen button:focus-visible{outline-color:#a8f5ff}
+#home-screen{padding:clamp(105px,14vh,145px) 5% 85px;text-align:center;isolation:isolate;overflow:auto;background:#020a29 url('../assets/title-stadium.svg') center center/cover no-repeat}
+#home-screen::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 50% 34%,#02082905 0,#02082933 50%,#01051b88 100%)}
+#home-screen>.eyebrow{justify-content:center;color:#b9ebff;font-size:10px;letter-spacing:.32em;margin:0 0 18px}
+#home-screen .live-dot{background:#63e6ff;box-shadow:0 0 14px #21c8ff}
+#home-screen h1{font-family:'Barlow Condensed','Arial Narrow',Impact,sans-serif;font-style:italic;font-size:clamp(68px,8vw,112px);line-height:.8;font-weight:700;letter-spacing:-.025em;max-width:none;margin:0 auto 18px;color:#ecf9ff;filter:drop-shadow(0 4px 0 #092160) drop-shadow(0 0 24px #237de24d)}
+#home-screen h1 span{display:block;font-family:inherit;font-style:inherit;font-weight:inherit;line-height:.84;background:linear-gradient(180deg,#fff 5%,#f6fbff 45%,#9cb7dc 48%,#fff 78%,#8ca6cb 100%);background-clip:text;-webkit-text-fill-color:transparent}
+#home-screen h1 span+span{font-size:.69em;letter-spacing:.13em;margin-top:9px;padding-left:.14em}
+#home-screen .intro{max-width:none;margin:14px auto 24px;font-size:12px;letter-spacing:.08em;color:#d4e3f7;line-height:1.5}
+.matchup-panel{position:relative;margin:0 auto;max-width:760px;padding:28px 36px 22px;border:1px solid #9cdbff82;border-top:3px solid #e7f6ff;background:linear-gradient(180deg,#183e83e8 0,#0d225aee 12%,#060f35eb 100%);box-shadow:0 0 0 5px #07163e88,0 18px 60px #0104198c,inset 0 1px 22px #4797f321;clip-path:polygon(2% 0,98% 0,100% 12%,100% 100%,0 100%,0 12%)}
+.matchup-ribbon{position:absolute;top:0;left:50%;transform:translateX(-50%);padding:6px 34px 7px;background:linear-gradient(180deg,#fe4b61,#b50b31);clip-path:polygon(7% 0,93% 0,100% 100%,0 100%);color:#fff;font-size:9px;letter-spacing:.19em;font-weight:700;white-space:nowrap}
+.matchup-teams{display:grid;grid-template-columns:1fr 76px 1fr;align-items:center;gap:15px;margin-top:15px}
+.matchup-team{display:flex;align-items:center;gap:18px;text-align:left;min-width:0}
+.matchup-team.away{flex-direction:row-reverse;text-align:right}
+.matchup-team .crest{position:static;flex-shrink:0;width:52px;height:63px;font-size:29px;border-color:#d2efff;background:linear-gradient(140deg,#2869d6,#071844);transform:none}
+.matchup-team .ember-crest{background:linear-gradient(140deg,#ffd285,#cc6b21);color:#24160e;border-color:#ffe8c2}
+.matchup-team .crest small{font-size:9px}
+.matchup-team strong{display:block;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:clamp(22px,2.8vw,31px);font-weight:700;line-height:1;letter-spacing:.02em;text-transform:uppercase}
+.matchup-team .club-caption{display:block;font-size:8px;letter-spacing:.14em;color:#91b6e2;margin-top:8px}
+.versus{font-family:'Barlow Condensed',Impact,sans-serif;font-size:55px;font-weight:700;font-style:italic;line-height:1;background:linear-gradient(#fff,#b2cae9 55%,#fff 65%,#8ba5ce);background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 3px 0 #0008)}
+.matchup-details{display:flex;justify-content:center;gap:20px;border-top:1px solid #92c6fa2b;margin-top:19px;padding-top:12px;color:#b3d5f2;font-size:8px;font-weight:700;letter-spacing:.13em}
+#home-screen .hero-actions{max-width:760px;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:10px;margin:21px auto 0}
+#home-screen .hero-actions .large{min-width:0;width:100%;min-height:55px;padding:14px 18px;border-radius:2px;gap:10px;font-size:12px;box-shadow:inset 0 1px #e8f7ff2b,0 5px 16px #0004}
+#home-screen .hero-actions .primary{background:linear-gradient(180deg,#f8455d,#c41438);border-color:#ff8b9b;color:#fff}
+#home-screen .hero-actions .primary:hover{background:linear-gradient(180deg,#ff6078,#d51b40);box-shadow:0 0 24px #f928594d}
+#home-screen .hero-actions .secondary{background:linear-gradient(180deg,#153c7be8,#0b2056f5);border-color:#82c9fc6e;color:#eaf7ff}
+#home-screen .hero-actions .secondary:hover{background:linear-gradient(180deg,#2361b4,#16376e);border-color:#9eefff}
+#home-screen .hero-meta{justify-content:center;font-size:8px;color:#a8c9eb;gap:15px;margin-top:21px;letter-spacing:.13em}
+#home-screen .hero-meta i{background:#5cdfff}
+#menu-footer{border-top-color:#6cb6f735;color:#a8bddb;background:linear-gradient(0deg,#02091dbb,transparent);z-index:2}
+#menu-footer .prototype-label span{color:#82dcff}
+@media(min-width:1600px){#home-screen{padding-top:17vh}.matchup-panel{margin-top:32px}}
+@media(max-height:740px) and (min-width:701px){#home-screen{padding-top:100px}#home-screen h1{font-size:78px}#home-screen>.eyebrow{margin-bottom:13px}#home-screen .intro{margin:12px 0 18px}.matchup-panel{padding-top:23px;padding-bottom:15px}.matchup-details{margin-top:13px;padding-top:10px}#home-screen .hero-actions{margin-top:17px}}
+@media(max-width:700px){body:not(.playing) #masthead{padding:16px 5%}body:not(.playing) #masthead .brand-light{display:none}body:not(.playing) #masthead nav{gap:13px}#home-screen{padding:110px 5% 80px}#home-screen h1{font-size:clamp(64px,16vw,92px)}#home-screen>.eyebrow{font-size:8px;letter-spacing:.19em}#home-screen .intro{font-size:10px;margin:17px 0 25px}.matchup-panel{padding:25px 15px 16px}.matchup-teams{grid-template-columns:1fr 34px 1fr;gap:10px}.matchup-team,.matchup-team.away{flex-direction:column;text-align:center;gap:10px}.matchup-team strong{font-size:22px}.matchup-team .crest{width:42px;height:52px;font-size:25px}.matchup-team .club-caption{display:none}.versus{font-size:34px}.matchup-details{gap:13px;font-size:6px;letter-spacing:.09em}#home-screen .hero-actions{grid-template-columns:1fr 1fr;gap:8px;max-width:100%}#home-screen #play-offline{grid-column:1/-1}#home-screen .hero-actions .large{font-size:11px;min-height:48px;padding:12px}#home-screen .hero-meta{font-size:6px;gap:8px;letter-spacing:.05em}#menu-footer{height:40px;font-size:7px}}
+@media(max-height:500px) and (orientation:landscape){body:not(.playing) #masthead{padding-top:9px;padding-bottom:9px}#home-screen{padding:72px 5% 48px}#home-screen>.eyebrow{display:none}#home-screen h1{font-size:46px;display:flex;justify-content:center;align-items:baseline;gap:10px;margin-bottom:10px}#home-screen h1 span+span{font-size:1em;letter-spacing:-.025em;margin:0;padding:0}#home-screen .intro{display:none}.matchup-panel{max-width:630px;padding:19px 23px 12px}.matchup-ribbon{font-size:7px;padding:4px 24px}.matchup-teams{margin-top:8px}.matchup-team strong{font-size:22px}.matchup-team .crest{width:37px;height:45px;font-size:22px}.matchup-team .crest small{font-size:7px}.matchup-team .club-caption{display:none}.versus{font-size:36px}.matchup-details{margin-top:9px;padding-top:7px;font-size:6px}#home-screen .hero-actions{max-width:630px;margin-top:11px}#home-screen .hero-actions .large{min-height:40px;padding:8px 13px;font-size:10px}#home-screen .hero-meta{display:none}#menu-footer{height:30px}}
+@media(prefers-reduced-motion:reduce){#home-screen button{transition:none}}

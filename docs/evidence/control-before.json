@@ -1,0 +1,26 @@
+{
+  "speedAfter200ms": 2.062,
+  "reverseBrakeMs": 516.6666666666667,
+  "normal": {
+    "speed": 6.551379999999999,
+    "meanGap": 0.9001687106987412,
+    "maxTurnGap": 0.9108250631382014,
+    "retains": true
+  },
+  "close": {
+    "speed": 3.9308279999999995,
+    "meanGap": 0.5601464136339581,
+    "maxTurnGap": 0.5632297748770065,
+    "retains": true
+  },
+  "sprint": {
+    "speed": 7.9926835999999994,
+    "meanGap": 1.4115659474690443,
+    "maxTurnGap": 1.4127553971236066,
+    "retains": true
+  },
+  "firstTouch": {
+    "remainingSpeed": 3.8639133807975736,
+    "settleMs": 255.2181573382153
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "testedAt": "2026-10-19T15:40:25.969Z",
+  "browser": "155.0.8059.82",
+  "checks": [
+    {
+      "name": "Keyboard hold fills the actual shot power; release shoots once and resets",
+      "low": 28,
+      "high": 61
+    },
+    {
+      "name": "High power changes colour; full charge auto-release resets the meter"
+    },
+    {
+      "name": "Pause hides charge immediately"
+    },
+    {
+      "name": "Losing possession hides and clears shot power"
+    },
+    {
+      "name": "Emulated controller Shoot drives the same power meter"
+    },
+    {
+      "name": "First-person power bar stays above the view of the ball"
+    },
+    {
+      "name": "Touch hold/release and HUD fit",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      }
+    },
+    {
+      "name": "Touch hold/release and HUD fit",
+      "viewport": {
+        "width": 568,
+        "height": 320
+      }
+    },
+    {
+      "name": "No browser JavaScript errors"
+    }
+  ],
+  "errors": []
+}

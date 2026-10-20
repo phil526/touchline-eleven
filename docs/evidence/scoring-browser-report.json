@@ -1,0 +1,42 @@
+{
+  "testedAt": "2026-10-19T21:43:52.950Z",
+  "checks": [
+    {
+      "name": "A real keyboard tap before a ground pass arrives triggers a first-time shot",
+      "status": "passed"
+    },
+    {
+      "name": "R passes once, transfers control and sends the original passer forward",
+      "status": "passed"
+    },
+    {
+      "name": "A manually aimed through ball returns to the one-two runner",
+      "status": "passed"
+    },
+    {
+      "name": "Shooting assist changes the actual guide, can be disabled and persists on the device",
+      "status": "passed"
+    },
+    {
+      "name": "Emulated LB + A starts one run without an accidental switch or duplicate pass",
+      "status": "passed"
+    },
+    {
+      "name": "A touch Shoot tap preserves the selected Finesse style for a first-time ground finish",
+      "status": "passed"
+    },
+    {
+      "name": "Touch Control + Pass triggers the same one-two without extra screen buttons",
+      "status": "passed"
+    },
+    {
+      "name": "New help and shooting assist are accessible on a small phone",
+      "status": "passed"
+    },
+    {
+      "name": "No browser JavaScript exceptions",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

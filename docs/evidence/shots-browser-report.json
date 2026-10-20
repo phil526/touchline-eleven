@@ -1,0 +1,44 @@
+{
+  "testedAt": "2026-10-19T19:20:43.609Z",
+  "checks": [
+    {
+      "name": "Keyboard finesse charge, guide and single release (idle controller connected)",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard chip charge, guide and single release (idle controller connected)",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard normal charge, guide and single release (idle controller connected)",
+      "status": "passed"
+    },
+    {
+      "name": "Controller finesse modifier charges and releases without switching or tackling",
+      "status": "passed"
+    },
+    {
+      "name": "Controller chip modifier charges and releases without switching or tackling",
+      "status": "passed"
+    },
+    {
+      "name": "Touch selection, charge and release at 844×390; no radar overlap",
+      "status": "passed",
+      "overflow": false,
+      "covered": [],
+      "offscreen": []
+    },
+    {
+      "name": "Touch selection, charge and release at 568×320; no radar overlap",
+      "status": "passed",
+      "overflow": false,
+      "covered": [],
+      "offscreen": []
+    },
+    {
+      "name": "No browser JavaScript errors",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

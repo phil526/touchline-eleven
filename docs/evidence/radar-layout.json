@@ -1,0 +1,160 @@
+{
+  "checkedAt": "2026-10-19T18:32:18.222Z",
+  "rows": [
+    {
+      "width": 844,
+      "height": 390,
+      "camera": "broadcast",
+      "radar": {
+        "x": 673.6875,
+        "y": 82,
+        "width": 145,
+        "height": 95
+      },
+      "pause": {
+        "x": 785.6875,
+        "y": 12,
+        "width": 33,
+        "height": 33
+      },
+      "score": {
+        "x": 25.3125,
+        "y": 10,
+        "width": 186,
+        "height": 77
+      },
+      "overflow": false
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "camera": "telebroadcast",
+      "radar": {
+        "x": 673.6875,
+        "y": 82,
+        "width": 145,
+        "height": 95
+      },
+      "pause": {
+        "x": 785.6875,
+        "y": 12,
+        "width": 33,
+        "height": 33
+      },
+      "score": {
+        "x": 25.3125,
+        "y": 10,
+        "width": 186,
+        "height": 77
+      },
+      "overflow": false
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "camera": "third-person",
+      "radar": {
+        "x": 673.6875,
+        "y": 82,
+        "width": 145,
+        "height": 95
+      },
+      "pause": {
+        "x": 785.6875,
+        "y": 12,
+        "width": 33,
+        "height": 33
+      },
+      "score": {
+        "x": 25.3125,
+        "y": 10,
+        "width": 186,
+        "height": 77
+      },
+      "overflow": false
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "pauseOpened": true
+    },
+    {
+      "width": 568,
+      "height": 320,
+      "camera": "broadcast",
+      "radar": {
+        "x": 405.96875,
+        "y": 82,
+        "width": 145,
+        "height": 95
+      },
+      "pause": {
+        "x": 517.96875,
+        "y": 12,
+        "width": 33,
+        "height": 33
+      },
+      "score": {
+        "x": 15,
+        "y": 10,
+        "width": 186,
+        "height": 77
+      },
+      "overflow": false
+    },
+    {
+      "width": 568,
+      "height": 320,
+      "camera": "telebroadcast",
+      "radar": {
+        "x": 405.96875,
+        "y": 82,
+        "width": 145,
+        "height": 95
+      },
+      "pause": {
+        "x": 517.96875,
+        "y": 12,
+        "width": 33,
+        "height": 33
+      },
+      "score": {
+        "x": 15,
+        "y": 10,
+        "width": 186,
+        "height": 77
+      },
+      "overflow": false
+    },
+    {
+      "width": 568,
+      "height": 320,
+      "camera": "third-person",
+      "radar": {
+        "x": 405.96875,
+        "y": 82,
+        "width": 145,
+        "height": 95
+      },
+      "pause": {
+        "x": 517.96875,
+        "y": 12,
+        "width": 33,
+        "height": 33
+      },
+      "score": {
+        "x": 15,
+        "y": 10,
+        "width": 186,
+        "height": 77
+      },
+      "overflow": false
+    },
+    {
+      "width": 568,
+      "height": 320,
+      "pauseOpened": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,39 @@
+{
+  "errors": [],
+  "menu": {
+    "fps": 46,
+    "frameMs": 21.6,
+    "drawCalls": 69,
+    "triangles": 155178,
+    "pixelRatio": 1,
+    "width": 1440,
+    "height": 900
+  },
+  "gameplay": {
+    "stats": {
+      "fps": 38,
+      "frameMs": 26.6,
+      "drawCalls": 39,
+      "triangles": 154802,
+      "pixelRatio": 1,
+      "width": 1440,
+      "height": 900
+    },
+    "measuredFps": 39.90628970775093,
+    "frameMsP95": 50,
+    "sampleFrames": 201,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+    "renderer": "ANGLE (Intel, Intel(R) Iris(R) Plus Graphics (0x00008A5A) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "players": 22,
+    "phase": "playing"
+  },
+  "low": {
+    "fps": 55,
+    "frameMs": 18.2,
+    "drawCalls": 38,
+    "triangles": 80694,
+    "pixelRatio": 0.85,
+    "width": 1440,
+    "height": 900
+  }
+}

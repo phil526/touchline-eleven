@@ -1,0 +1,61 @@
+{
+  "testedAt": "2026-10-19T16:04:30.260Z",
+  "browser": "155.0.8059.82",
+  "checks": [
+    {
+      "name": "Legacy camera preference migrates to visible third-person follow camera",
+      "status": "passed",
+      "mode": "third-person",
+      "hidden": null,
+      "distance": 8.195633610495136,
+      "height": 4.769084527477489
+    },
+    {
+      "name": "F performs a committed slide with recovery; an empty challenge causes no foul",
+      "status": "passed",
+      "duration": 0.85,
+      "stamina": 0.975
+    },
+    {
+      "name": "Charging shows a directional shot target and hides the passing preview; release clears both guide and power",
+      "status": "passed",
+      "targets": [
+        -3.2,
+        3.2
+      ]
+    },
+    {
+      "name": "Offside free kicks display their actual reason",
+      "status": "passed"
+    },
+    {
+      "name": "A scored goal starts one replay; Skip preserves the authoritative score",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard skips goal replay without creating another shot or score",
+      "status": "passed"
+    },
+    {
+      "name": "Replay ends automatically without retriggering",
+      "status": "passed"
+    },
+    {
+      "name": "Leaving the match clears replay history",
+      "status": "passed"
+    },
+    {
+      "name": "Touch Slide starts the action and landscape controls fit",
+      "status": "passed"
+    },
+    {
+      "name": "Touch can skip the automatic goal replay",
+      "status": "passed"
+    },
+    {
+      "name": "No browser JavaScript errors",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

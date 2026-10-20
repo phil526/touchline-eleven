@@ -1,0 +1,22 @@
+{
+  "testedAt": "2026-10-19T22:44:26.581Z",
+  "checks": [
+    {
+      "name": "Penalty catch dives and keeps the ball visibly between the gloves",
+      "status": "passed"
+    },
+    {
+      "name": "Penalty punch dives the other way and sends a live rebound away from goal",
+      "status": "passed"
+    },
+    {
+      "name": "A real midfield receipt displays a 30 percent burst, retains possession, and expires during keyboard movement",
+      "status": "passed"
+    },
+    {
+      "name": "No browser or shader exceptions",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

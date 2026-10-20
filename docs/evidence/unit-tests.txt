@@ -1,0 +1,46 @@
+✔ settings and intentions reject non-finite, foreign, and oversized values (13.3653ms)
+✔ two clients get the same authority, settings, mapped teams and a strict two-slot room (426.8309ms)
+✔ settings invalidate readiness; inputs are sequenced, acknowledged and expire (370.5842ms)
+✔ malformed JSON and client-supplied goals never alter server-owned score (84.2507ms)
+✔ token reconnect retains match, reserved slot, sequence and score (212.1835ms)
+✔ disconnect grace ends the match authoritatively without inventing a goal (197.4504ms)
+✔ mutual rematch alone creates a fresh authoritative match (80.9965ms)
+✔ HTTP health serves only configured static root; room expiry clears a dead lobby (338.8091ms)
+✔ oversized messages and sustained floods close only the offending sockets (150.6261ms)
+✔ browser network helper coalesces actions, preserves authority and automatically rejoins (620.8338ms)
+✔ ordered 35–120 ms one-way latency and jitter retain matching authority and input acknowledgements (2070.7348ms)
+ℹ 26 matching snapshots under ordered 35–120 ms one-way jitter; probe RTT 211 ms.
+✔ silent match snapshots trigger same-room recovery while lobby and full-time remain stable (2120.8985ms)
+✔ connection deadlines reject silent handshakes; cancellation settles and prevents late reopen (232.4081ms)
+✔ two original teams have eleven distinct numbered starters and complete attributes (19.8798ms)
+✔ kickoff releases exactly one ball owner and dead time does not advance the clock (59.9351ms)
+✔ movement accelerates, analogue input is normalised, sprint uses stamina (163.7692ms)
+✔ short, through and lofted passes release the ball and identify a receiver (19.7913ms)
+✔ strong pass aim never silently targets a team-mate behind the aim (13.8491ms)
+✔ passing under pressure, while sprinting or facing away increases dispersion (8.0657ms)
+✔ automatic receiver switching waits for a committed kick animation (13.7433ms)
+✔ shooting charges while held and releases on button-up, with auto release at cap (94.6767ms)
+✔ shot dispersion increases when facing away, moving or shooting from a narrow angle (4.0743ms)
+✔ switch action chooses another influential outfield player (4.4531ms)
+✔ whole-ball goal crossing scores once and freezes active time (12.2519ms)
+✔ ball must cross completely and posts prevent a goal (4.2953ms)
+✔ last touch correctly awards throw-ins, corners and goal kicks (7.2959ms)
+✔ a diagonal corner crossing is classified by the first boundary crossed (2.3814ms)
+✔ goals are assigned to the correct side after the end change (13.2777ms)
+✔ automatic restart completes and exempt restarts clear offside (9.1821ms)
+✔ offside is recorded on pass release and penalised only at involvement (2.22ms)
+✔ mistimed contact in the penalty area awards a penalty (3.72ms)
+✔ keeper catches only within finite reach and distributes held ball (67.6395ms)
+✔ keeper cannot catch through a player or reach outside the penalty area (1.8147ms)
+✔ halftime changes ends once; fulltime freezes clock and supports serialisation (7.7678ms)
+✔ invalid inputs and invalid time steps cannot corrupt match state (2.252ms)
+✔ null human input falls back to AI; explicit neutral input keeps human control (22.783ms)
+✔ seeded six-minute AI match stays finite and completes with meaningful football (5268.1145ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8421.9157

@@ -1,0 +1,50 @@
+{
+  "testedAt": "2026-10-19T20:37:04.501Z",
+  "checks": [
+    {
+      "name": "freeKick: waits, retains aimed direction, holds full power and passes on keyboard release",
+      "status": "passed"
+    },
+    {
+      "name": "throwIn: waits, retains aimed direction, holds full power and passes on keyboard release",
+      "status": "passed"
+    },
+    {
+      "name": "goalKick: waits, retains aimed direction, holds full power and passes on keyboard release",
+      "status": "passed"
+    },
+    {
+      "name": "corner: waits, retains aimed direction, holds full power and passes on keyboard release",
+      "status": "passed"
+    },
+    {
+      "name": "Shot guide and capped charge work; pause/resume cancels without kicking",
+      "status": "passed"
+    },
+    {
+      "name": "Emulated controller stick and B charge/release a directional goal kick",
+      "status": "passed"
+    },
+    {
+      "name": "Third-person restart guide and power bar stay separate from the instructions",
+      "status": "passed"
+    },
+    {
+      "name": "Landscape touch joystick and Long throw charge/release with correct labels and flight",
+      "status": "passed"
+    },
+    {
+      "name": "Cancelled touch gestures clear charge without taking the restart",
+      "status": "passed"
+    },
+    {
+      "name": "Compact landscape corner instructions fit between scoreboard and radar",
+      "status": "passed"
+    },
+    {
+      "name": "No browser JavaScript exceptions",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

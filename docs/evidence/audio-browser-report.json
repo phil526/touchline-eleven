@@ -1,0 +1,124 @@
+{
+  "testedAt": "2026-10-19T20:18:09.324Z",
+  "checks": [
+    {
+      "name": "Audio stays silent until a user gesture",
+      "status": "passed"
+    },
+    {
+      "name": "All four self-hosted crowd recordings decode successfully",
+      "status": "passed",
+      "bed": {
+        "seconds": 19,
+        "channels": 2
+      },
+      "swell": {
+        "seconds": 11,
+        "channels": 2
+      },
+      "applause": {
+        "seconds": 4.5,
+        "channels": 2
+      },
+      "goal": {
+        "seconds": 8.5,
+        "channels": 2
+      }
+    },
+    {
+      "name": "Kick-off uses one referee whistle and starts the stadium ambience",
+      "status": "passed"
+    },
+    {
+      "name": "Real keyboard charge/release selects normal, finesse and chip contact sounds",
+      "status": "passed"
+    },
+    {
+      "name": "A timed aerial contact selects the header sound",
+      "status": "passed"
+    },
+    {
+      "name": "Crowd anticipation rises near the attacking goal",
+      "status": "passed",
+      "calm": 0,
+      "danger": 1
+    },
+    {
+      "name": "A real close shot wide triggers a gasp",
+      "status": "passed"
+    },
+    {
+      "name": "Goal celebration triggers once while the automatic replay runs",
+      "status": "passed"
+    },
+    {
+      "name": "Effects and crowd controls mute independently",
+      "status": "passed",
+      "effects": 0.00009909800428431481,
+      "crowd": 0.00008133839583024383,
+      "master": 0.6499999761581421
+    },
+    {
+      "name": "Saved mute is respected from the first audio gesture after reload",
+      "status": "passed"
+    },
+    {
+      "name": "Quit releases voices and ambience and suspends the audio context",
+      "status": "passed"
+    },
+    {
+      "name": "Rendered stereo output is finite, bounded and truly silent when muted",
+      "status": "passed",
+      "audible": {
+        "peak": 0.590451180934906,
+        "energy": 798.3995051530488,
+        "leftEarly": 124.61019522155397,
+        "rightEarly": 7.764102467168512,
+        "remaining": 0
+      },
+      "masterMuted": {
+        "peak": 0,
+        "energy": 0,
+        "leftEarly": 0,
+        "rightEarly": 0,
+        "remaining": 0
+      },
+      "effectsMuted": {
+        "peak": 0,
+        "energy": 0,
+        "leftEarly": 0,
+        "rightEarly": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "name": "Rendered a 16-second audition through the real game mixer",
+      "status": "passed"
+    },
+    {
+      "name": "Touch gestures unlock the audio and start the two bounded ambience layers",
+      "status": "passed"
+    },
+    {
+      "name": "Audio controls and recording attribution remain usable on a landscape phone",
+      "status": "passed"
+    },
+    {
+      "name": "A fresh touch resumes audio after context suspension",
+      "status": "passed"
+    },
+    {
+      "name": "Failed crowd downloads fall back without stopping play",
+      "status": "passed"
+    },
+    {
+      "name": "Unavailable Web Audio leaves the game playable",
+      "status": "passed"
+    },
+    {
+      "name": "No browser JavaScript errors",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "Real keyboard triggers three distinct skill moves without shooting",
+    "Goalkeeper practice waits for Ready and accepts keyboard direction and timed dive",
+    "Shot map displays the actual attempt, supports filters and selectable feedback",
+    "Assisted penalty setting is persisted and disables manual dive controls",
+    "Emulated 844×390 phone supports skills, penalty selection/dive and shot map",
+    "Emulated 568×320 phone supports skills, penalty selection/dive and shot map",
+    "No browser JavaScript exceptions"
+  ],
+  "errors": []
+}

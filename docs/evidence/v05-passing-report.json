@@ -1,0 +1,47 @@
+{
+  "testedAt": "2026-10-19T18:24:50.964Z",
+  "browser": "155.0.8059.82",
+  "checks": [
+    {
+      "name": "A quick keyboard tap releases exactly one pass, including the fallback pulse",
+      "status": "passed"
+    },
+    {
+      "name": "Holding J raises pass power and shows the shared receiver target; release uses that receiver once",
+      "status": "passed",
+      "early": 9,
+      "later": 33,
+      "receiver": "Alex Sol"
+    },
+    {
+      "name": "Holding K shows a charged through-ball landing point ahead of the receiver",
+      "status": "passed",
+      "leadMetres": 3.0200646806831486
+    },
+    {
+      "name": "Maximum charge auto-releases once and stays latched across a receiver switch and button-up",
+      "status": "passed"
+    },
+    {
+      "name": "Losing possession clears pass power and receiver guide without releasing the abandoned pass",
+      "status": "passed"
+    },
+    {
+      "name": "Pause hides the power meter and returning to the title screen clears the match and gameplay HUD",
+      "status": "passed"
+    },
+    {
+      "name": "Standard controller A and Y hold/release through the actual gamepad polling path",
+      "status": "passed"
+    },
+    {
+      "name": "Touch Pass and Through hold/release through real pointer events without horizontal overflow",
+      "status": "passed"
+    },
+    {
+      "name": "No browser JavaScript errors",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

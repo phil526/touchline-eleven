@@ -1,0 +1,45 @@
+{
+  "testedAt": "2026-10-19T18:17:45.661Z",
+  "browser": "155.0.8059.82",
+  "checks": [
+    {
+      "name": "Title Practice starts an isolated shooting drill with objective and counters",
+      "status": "passed"
+    },
+    {
+      "name": "Real held/released shooting uses power and aim guide, records one outcome and resets without replay/results",
+      "status": "passed",
+      "charge": {
+        "title": "SHOT POWER",
+        "visible": true,
+        "value": 16,
+        "guide": true
+      },
+      "result": "missed"
+    },
+    {
+      "name": "Practice pause, restart and exit preserve the correct lifecycle and clear counters",
+      "status": "passed"
+    },
+    {
+      "name": "Slide drill executes the real F challenge and reports its contact outcome",
+      "status": "passed",
+      "drill": "slide",
+      "title": "Slide tackle timing",
+      "objective": "Win the ball before the player. Wait for the carrier to approach, then slide towards the ball.",
+      "controls": "F / X / Square while defending / Slide · An early slide can miss; contact from behind can foul.",
+      "round": 1,
+      "attempts": 1,
+      "successes": 1,
+      "phase": "feedback",
+      "result": "Clean challenge. You reached the ball first.",
+      "resultCode": "clean",
+      "releaseRequired": false
+    },
+    {
+      "name": "No browser JavaScript exceptions",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

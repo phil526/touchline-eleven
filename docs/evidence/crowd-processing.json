@@ -1,0 +1,38 @@
+[
+  {
+    "file": "stadium-bed.mp3",
+    "source": "Gregor Quendel - Free Crowd Cheering Sounds - MP3/Gregor Quendel - Crowd Cheering Sounds - 10 - Ambience.mp3",
+    "seconds": 19.0,
+    "bytes": 229004,
+    "sha256": "17600ff98e8e98ee3eedfcf6312da3a63fb3d386ab5a1360f65fd0b466fc83df",
+    "rms": 0.08992738306917764,
+    "peak": 0.8
+  },
+  {
+    "file": "stadium-swell.mp3",
+    "source": "Gregor Quendel - Free Crowd Cheering Sounds - MP3/Gregor Quendel - Crowd Cheering Sounds - 05 - Soft cheering - I.mp3",
+    "seconds": 11.0,
+    "bytes": 133100,
+    "sha256": "6d738978b3453cc41863a177d32f4c4783e4592832e28ca59b081672ff68abf4",
+    "rms": 0.11548807403107728,
+    "peak": 0.8000000000000002
+  },
+  {
+    "file": "stadium-goal.mp3",
+    "source": "Gregor Quendel - Free Crowd Cheering Sounds - MP3/Gregor Quendel - Crowd Cheering Sounds - 04 - Strong cheering - II - Short.mp3",
+    "seconds": 8.5,
+    "bytes": 103292,
+    "sha256": "15614591c430ff2dafb359fee41fe939a89e73556ce07dee98360fc0077f8bc1",
+    "rms": 0.14763689041137695,
+    "peak": 0.800000011920929
+  },
+  {
+    "file": "stadium-applause.mp3",
+    "source": "Gregor Quendel - Free Crowd Cheering Sounds - MP3/Gregor Quendel - Crowd Cheering Sounds - 05 - Soft cheering - I.mp3",
+    "seconds": 4.5,
+    "bytes": 54908,
+    "sha256": "6f6717fcb3c70c9c49db86145c15e981f13f885925fe4aedc505904ff8516417",
+    "rms": 0.09836679697036743,
+    "peak": 0.800000011920929
+  }
+]

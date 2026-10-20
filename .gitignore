@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+*.log
+.sites/
+.cache/
+qa-output/
+.sites-runtime/

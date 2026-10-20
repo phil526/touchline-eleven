@@ -1,0 +1,42 @@
+{
+  "testedAt": "2026-10-19T22:09:13.199Z",
+  "checks": [
+    {
+      "name": "Training menu starts isolated Penalty Practice in the automatic camera without changing preferences",
+      "status": "passed"
+    },
+    {
+      "name": "Real keyboard input moves the goal target in two dimensions and full power waits without moving the target",
+      "status": "passed"
+    },
+    {
+      "name": "A real penalty records one attempt and resets for another without match results or replay",
+      "status": "passed"
+    },
+    {
+      "name": "Restart clears practice counters and Exit returns to the title menu",
+      "status": "passed"
+    },
+    {
+      "name": "Opponent penalty automatically uses the view from behind its taker and the AI still shoots",
+      "status": "passed"
+    },
+    {
+      "name": "Normal play restores the saved camera",
+      "status": "passed"
+    },
+    {
+      "name": "Emulated phone joystick aims horizontally and vertically while Shoot charges and releases",
+      "status": "passed"
+    },
+    {
+      "name": "Penalty practice remains accessible on a compact phone",
+      "status": "passed"
+    },
+    {
+      "name": "No browser JavaScript exceptions",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

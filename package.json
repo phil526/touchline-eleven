@@ -1,0 +1,20 @@
+{
+  "name": "touchline-eleven",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Original 11-a-side browser football prototype",
+  "engines": {"node": ">=22"},
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/dev.mjs",
+    "preview": "node scripts/preview.mjs",
+    "start": "node server/index.js",
+    "server": "node server/index.js",
+    "test": "node --test tests/*.test.js",
+    "test:browser": "node tests/browser-smoke.mjs"
+  },
+  "dependencies": {"three": "0.180.0", "ws": "8.18.3"},
+  "devDependencies": {"playwright": "1.62.1"},
+  "packageManager": "npm@10.9.2"
+}

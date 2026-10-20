@@ -1,0 +1,75 @@
+{
+  "testedAt": "2026-10-19T16:06:32.391Z",
+  "browser": "155.0.8059.82",
+  "checks": [
+    {
+      "name": "Title screen and 3D canvas load",
+      "status": "passed"
+    },
+    {
+      "name": "Offline setup starts full 11-a-side match",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard movement changes authoritative player position",
+      "status": "passed",
+      "metres": 1.3317083333333333
+    },
+    {
+      "name": "Hold/release shooting charges and releases a shot",
+      "status": "passed",
+      "charge": 0.10526315789473684
+    },
+    {
+      "name": "Offline pause stops simulation and resumes",
+      "status": "passed"
+    },
+    {
+      "name": "Focus loss clears held input",
+      "status": "passed"
+    },
+    {
+      "name": "Complete match changes ends and results match authority",
+      "status": "passed",
+      "state": [
+        1,
+        0
+      ],
+      "text": "1 – 0",
+      "half": 2
+    },
+    {
+      "name": "Offline rematch resets score",
+      "status": "passed"
+    },
+    {
+      "name": "Emulated standard gamepad analogue movement and disconnect",
+      "status": "passed"
+    },
+    {
+      "name": "Two browser contexts create/join, synchronise tactics, ready and agree on score",
+      "status": "passed"
+    },
+    {
+      "name": "Online menu cannot pause authority",
+      "status": "passed"
+    },
+    {
+      "name": "Browser transport reconnects to original room",
+      "status": "passed"
+    },
+    {
+      "name": "Emulated mobile simultaneous joystick and held shot release",
+      "status": "passed"
+    },
+    {
+      "name": "Landscape mobile HUD fits viewport",
+      "status": "passed"
+    },
+    {
+      "name": "No browser JavaScript exceptions",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

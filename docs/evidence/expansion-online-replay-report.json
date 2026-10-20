@@ -1,0 +1,83 @@
+{
+  "testedAt": "2026-10-19T17:13:25.924Z",
+  "browser": "155.0.8059.82",
+  "checks": [
+    {
+      "name": "Two isolated online clients automatically replay the same authoritative goal",
+      "status": "passed",
+      "code": "6ECCSS",
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "name": "Skipping is local while server ticks and the authoritative score remain intact",
+      "status": "passed",
+      "tickBefore": 319,
+      "tickAfter": 358
+    },
+    {
+      "name": "Both online replays end before playable kick-off without hiding live play",
+      "status": "passed",
+      "observations": [
+        {
+          "unsafePlayableFrames": 0,
+          "endPhase": "goal",
+          "active": false,
+          "score": [
+            1,
+            0
+          ]
+        },
+        {
+          "unsafePlayableFrames": 0,
+          "endPhase": "goal",
+          "active": false,
+          "score": [
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Emulated held B / Circle survives the goal transition; release and fresh press skips",
+      "status": "passed",
+      "progressBeforeFreshPress": 0.13476923076923064,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "name": "Emulated held A / Cross survives the goal transition; release and fresh press skips",
+      "status": "passed",
+      "progressBeforeFreshPress": 0.1603461538461537,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "name": "Goal endpoint captured for goal-mouth framing review",
+      "status": "passed",
+      "progress": 0.9557692307692314,
+      "cameraPosition": {
+        "x": 41,
+        "y": 25.96709125,
+        "z": 42.4
+      },
+      "cameraTarget": {
+        "x": 41,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "name": "No browser JavaScript exceptions",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

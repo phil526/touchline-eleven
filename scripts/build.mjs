@@ -1,0 +1,12 @@
+import {mkdir,cp,copyFile,readFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=fileURLToPath(new URL('..',import.meta.url));
+const out=resolve(root,'dist');
+await mkdir(resolve(out,'vendor'),{recursive:true});
+for(const dir of ['client','shared','assets']) await cp(resolve(root,dir),resolve(out,dir),{recursive:true});
+await copyFile(resolve(root,'index.html'),resolve(out,'index.html'));
+const three=resolve(root,'node_modules/three');
+for(const f of ['three.module.js','three.core.js']) await copyFile(resolve(three,'build',f),resolve(out,'vendor',f));
+await copyFile(resolve(three,'LICENSE'),resolve(out,'vendor/THREE-LICENSE.txt'));
+console.log('Built self-contained browser client: '+out);

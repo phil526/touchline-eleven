@@ -1,0 +1,22 @@
+{
+  "testedAt": "2026-10-19T21:58:31.235Z",
+  "checks": [
+    {
+      "name": "Human throw-in waits with the ball overhead",
+      "status": "passed"
+    },
+    {
+      "name": "AI automatically releases one elevated infield throw with no offside or kick action",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard Shoot charges then releases a long throw, never a shot",
+      "status": "passed"
+    },
+    {
+      "name": "No browser JavaScript exceptions",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}
