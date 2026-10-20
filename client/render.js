@@ -366,6 +366,16 @@ export function createRenderer(canvas) {
   flightLine.frustumCulled=false;shotGuide.add(flightLine);
   const shotColourLow = new THREE.Color(0x89eddf), shotColourHigh = new THREE.Color(0xffaa48);
   const nextMarker = new THREE.Mesh(save(new THREE.RingGeometry(0.42, 0.49, 4)), basic(0xe3ead8, {transparent: true, opacity: 0.55})); nextMarker.rotation.x = -Math.PI / 2; nextMarker.visible = false; scene.add(nextMarker);
+  // Brief foul call-out: offender (red), fouled player (gold) and the contact spot.
+  const foulMarkers = new THREE.Group(); foulMarkers.visible = false; scene.add(foulMarkers);
+  const foulRed = basic(0xe8564a, {transparent: true, opacity: 0.95, depthWrite: false}), foulGold = basic(0xffd27a, {transparent: true, opacity: 0.95, depthWrite: false});
+  const foulRingGeometry = save(new THREE.RingGeometry(0.72, 0.86, 32));
+  const offenderRing = new THREE.Mesh(foulRingGeometry, foulRed); offenderRing.rotation.x = -Math.PI / 2; foulMarkers.add(offenderRing);
+  const victimRing = new THREE.Mesh(foulRingGeometry, foulGold); victimRing.rotation.x = -Math.PI / 2; foulMarkers.add(victimRing);
+  const foulSpot = new THREE.Group(); foulMarkers.add(foulSpot);
+  for (const angle of [Math.PI / 4, -Math.PI / 4]) {const bar = cube(0, 0.05, 0, 0.9, 0.02, 0.12, foulRed, foulSpot); bar.rotation.y = angle;}
+  const foulPulse = new THREE.Mesh(save(new THREE.RingGeometry(0.5, 0.58, 32)), basic(0xe8564a, {transparent: true, opacity: 0.95, depthWrite: false})); foulPulse.rotation.x = -Math.PI / 2; foulPulse.position.y = 0.05; foulSpot.add(foulPulse);
+  const FOUL_HIGHLIGHT_SECONDS = 3.5;
   const debugPositions = new Float32Array(22 * 6);
   const debugGeometry = save(new THREE.BufferGeometry()); debugGeometry.setAttribute('position', new THREE.BufferAttribute(debugPositions, 3));
   const debugLines = new THREE.LineSegments(debugGeometry, save(new THREE.LineBasicMaterial({color: 0x67f5d7, transparent: true, opacity: 0.7}))); debugLines.frustumCulled = false; scene.add(debugLines);
@@ -480,6 +490,17 @@ export function createRenderer(canvas) {
       nextMarker.visible = !!candidate && candidate.id !== selected.id && !options.menu && !options.replay && b.owner !== selected.id;
       if (candidate) nextMarker.position.set(candidate.x, 0.045, candidate.z);
     } else {receiver.visible = passGuide.visible = passEndpoint.visible = false;passTargetId=null;passTargetName=null;passAimInfo=null;nextMarker.visible = false;}
+    const foul = state?.phase === 'restart' ? state.restart?.foul : null, foulAge = state?.phaseTime ?? Infinity;
+    foulMarkers.visible = !!foul && foulAge < FOUL_HIGHLIGHT_SECONDS && !options.menu && !options.replay;
+    if (foulMarkers.visible) {
+      const offender = players[foul.offender], victim = players[foul.victim], fade = clamp((FOUL_HIGHLIGHT_SECONDS - foulAge) / 0.6, 0, 1);
+      offenderRing.visible = !!offender; victimRing.visible = !!victim;
+      if (offender) offenderRing.position.set(offender.x, 0.05, offender.z);
+      if (victim) victimRing.position.set(victim.x, 0.05, victim.z);
+      foulSpot.position.set(foul.x, 0, foul.z);
+      const pulse = (elapsed * 1.6) % 1; foulPulse.scale.setScalar(1 + pulse * 1.4);
+      foulRed.opacity = 0.95 * fade; foulGold.opacity = 0.95 * fade; foulPulse.material.opacity = 0.8 * fade * (1 - pulse);
+    }
     updateBoard(state);
     if (Math.abs(camera.fov - cameraInfo.fov) > 0.001) {camera.fov = cameraInfo.fov; camera.updateProjectionMatrix();}
     camera.position.set(cameraInfo.position.x, cameraInfo.position.y, cameraInfo.position.z);

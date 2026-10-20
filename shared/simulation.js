@@ -19,6 +19,8 @@ import {updatePenaltyKeeper,manualKeeper} from './keeper-control.js';
 export { attackDirection, getMatchClock };
 
 const {halfLength:HL,halfWidth:HW,ballRadius:BR} = PITCH;
+// Per-second chance an AI defender lunges in without a clean route to the ball.
+const AI_RASH_TACKLE_RATE = 0.12;
 const validTactic = x => ['defensive','balanced','attacking'].includes(x)?x:'balanced';
 function random(s) { s.rng=(Math.imul(s.rng,1664525)+1013904223)>>>0; return s.rng/4294967296; }
 function recordSound(s,type,data={}) {
@@ -155,10 +157,19 @@ function switchPlayer(s,team,mx=0,mz=0) {
   if(best>=0)s.selected[team]=best;
   s.pendingSwitch[team]=null;
 }
-function foul(s,offender,victim,sliding=false) {
-  s.stats.fouls[offender.team]++;const award=foulAward(s,victim);
+function foulDescription(offender,victim,sliding,fromBehind) {
+  if(sliding)return fromBehind?{kind:'slideBehind',label:'Slide from behind',reason:`Slide from behind: ${offender.name}'s slide went through ${victim.name} before the ball.`}
+    :{kind:'lateSlide',label:'Late slide',reason:`Late slide: ${offender.name}'s slide took ${victim.name}'s legs before the ball.`};
+  return fromBehind?{kind:'trip',label:'Trip from behind',reason:`Trip from behind: ${offender.name}'s standing tackle caught ${victim.name}'s heels before the ball.`}
+    :{kind:'lateTackle',label:'Late standing tackle',reason:`Late standing tackle: ${offender.name} contacted ${victim.name}'s legs before the ball.`};
+}
+function foul(s,offender,victim,sliding=false,fromBehind=false) {
+  s.stats.fouls[offender.team]++;const award=foulAward(s,victim),at={x:victim.x,z:victim.z};
+  const {kind,label,reason}=foulDescription(offender,victim,sliding,fromBehind);
   event(s,'foul',award.type==='penalty'?`Penalty to ${TEAMS[victim.team].abbr}`:`Foul by ${offender.name}`);
-  beginRestart(s,award.type,award.team,award.x,award.z,`Foul: ${offender.name}'s ${sliding?'slide':'standing tackle'} contacted ${victim.name} before the ball.`,'foul');
+  beginRestart(s,award.type,award.team,award.x,award.z,reason,'foul');
+  // Presentation-only detail: who was involved and where the contact happened.
+  s.restart.foul={offender:offender.id,victim:victim.id,x:at.x,z:at.z,kind,label};
 }
 function resolveChallenge(s,p,start,end,sliding=false) {
   const contact=challengeContacts(s,p,start,end,sliding);
@@ -170,16 +181,20 @@ function resolveChallenge(s,p,start,end,sliding=false) {
     Object.assign(s.ball,{owner:null,curl:0,state:'free',vx:nx*speed,vy:sliding?0.55:0.35,vz:nz*speed,lastTouch:p.id});
     s.offside=null;s.receiver=[null,null];s.passFrom=null;s.passTeam=null;s.ballFlightTime=0;
     if(owner)owner.cooldown=Math.max(owner.cooldown,0.5);
-    event(s,'tackle',`${p.name} ${sliding?'slides to clear':'wins'} the ball`,{kind:sliding?'slide':'tackle'});return true;
+    event(s,'tackle',`${p.name} ${sliding?'slides to clear':'wins'} the ball${contact.contested?' in a close challenge':''}`,{kind:sliding?'slide':'tackle'});return true;
   }
-  if(contact.opponent){foul(s,p,contact.opponent,sliding);return true;}
+  // Light edge contact from the front or side is play-on: the tackle simply misses.
+  if(contact.opponent&&!contact.light){foul(s,p,contact.opponent,sliding,contact.fromBehind);return true;}
   return false;
+}
+function standingTacklePath(p,facing=p.facing) {
+  const nx=Math.cos(facing),nz=Math.sin(facing),reach=1.2+p.attrs.tackling/500;
+  return [{x:p.x+nx*0.2,z:p.z+nz*0.2},{x:p.x+nx*reach,z:p.z+nz*reach}];
 }
 function tackle(s,p) {
   if(p.cooldown>0||p.actionTime>0)return;
   p.anim='tackle';p.actionTime=p.actionDuration=0.55;p.cooldown=1.15;
-  const nx=Math.cos(p.facing),nz=Math.sin(p.facing),reach=1.2+p.attrs.tackling/500;
-  resolveChallenge(s,p,{x:p.x+nx*0.2,z:p.z+nz*0.2},{x:p.x+nx*reach,z:p.z+nz*reach});
+  resolveChallenge(s,p,...standingTacklePath(p));
 }
 function startSlide(p,input) {
   if(p.cooldown>0||p.actionTime>0)return;
@@ -415,10 +430,23 @@ function aiIntent(s,p,pressers,dt) {
     p.targetX=dir*(HL-5);p.targetZ=p.z*0.4;
     const [nx,nz]=normal(p.targetX-p.x,p.targetZ-p.z);return[nx,nz,!easy&&Math.abs(p.z)>10];
   }
-  const {x:tx,z:tz,isPresser}=formationTarget(s,p,pressers);p.targetX=tx;p.targetZ=tz;
-  if(owner&&owner.team!==p.team&&distance(p,owner)<1.55&&p.cooldown<=0&&random(s)<dt*(easy?0.7:2.5))tackle(s,p);
+  let {x:tx,z:tz,isPresser}=formationTarget(s,p,pressers),jockey=false,face=null;
+  if(owner&&owner.team!==p.team&&distance(p,owner)<3) {
+    // Commit only when the standing tackle would reach the ball before the body.
+    const clean=challengeContacts(s,p,...standingTacklePath(p)).ballFirst;
+    // A rare mistimed lunge keeps defending human rather than perfect.
+    if(p.cooldown<=0&&(clean?random(s)<dt*(easy?0.7:1.6):distance(p,owner)<1.55&&random(s)<dt*AI_RASH_TACKLE_RATE))tackle(s,p);
+    else if(!clean&&isPresser) {
+      // Jockey: hold goal-side of a shielding attacker, otherwise step round to
+      // the exposed ball side and face it so a clean angle opens up.
+      const [gx,gz]=normal(-dir*HL-owner.x,-owner.z),[bx,bz]=normal(b.x-owner.x,b.z-owner.z);
+      ({x:tx,z:tz}=owner.shielding?{x:owner.x+gx*1.6,z:owner.z+gz*1.6}:{x:b.x+bx,z:b.z+bz});
+      jockey=true;face=Math.atan2(b.z-p.z,b.x-p.x);
+    }
+  }
+  p.targetX=tx;p.targetZ=tz;
   const [nx,nz]=normal(tx-p.x,tz-p.z);const scale=clamp(length(tx-p.x,tz-p.z)*0.6,0,1);
-  return[nx*scale,nz*scale,!!oneTwoTarget(s,p)&&length(tx-p.x,tz-p.z)>2||isPresser&&!easy&&distance(p,b)>4];
+  return[nx*scale,nz*scale,!jockey&&(!!oneTwoTarget(s,p)&&length(tx-p.x,tz-p.z)>2||isPresser&&!easy&&distance(p,b)>4),jockey,face];
 }
 function resolvePlayerCollisions(s) {
   for(let i=0;i<s.players.length;i++)for(let j=i+1;j<s.players.length;j++) {
@@ -572,7 +600,8 @@ export function stepMatch(s,inputs=[null,null],dt=1/60) {
           const attacking=p.x*attackDirection(s,p.team)>22;
           startAerial(s,p,neutralInput(),attacking?'shot':'clear');
         }
-        const [mx,mz,sprint]=aiIntent(s,p,pressers,dt);if(s.phase==='playing')movePlayer(p,mx,mz,sprint,false,dt,s.ball.owner===p.id);
+        const [mx,mz,sprint,jockey,face]=aiIntent(s,p,pressers,dt);
+        if(s.phase==='playing'){movePlayer(p,mx,mz,sprint,!!jockey,dt,s.ball.owner===p.id);if(Number.isFinite(face)&&p.actionTime<=0)p.facing+=clamp(angleDiff(face,p.facing),-dt*10,dt*10);}
       }
       if(s.phase!=='playing')break;
     }

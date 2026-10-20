@@ -227,6 +227,11 @@ body.playing.third-person #charge-wrap{top:140px;bottom:auto}
 #replay-progress{height:100%;background:#efba75;width:0}
 body.replaying #radar,body.replaying .player-panel,body.replaying #quick-controls,body.replaying #touch-controls,body.replaying #match-banner,body.replaying #charge-wrap,body.replaying #third-person-hint,body.replaying #pause-open{display:none!important}
 #banner-bottom{max-width:min(600px,88vw);line-height:1.5}
+/* Foul / offside explanation: kept on its own line above any aiming help. */
+.match-banner #banner-reason{max-width:min(600px,88vw);margin:0 auto 8px;color:#fff3df;font-size:13px;letter-spacing:.3px;line-height:1.4}
+.match-banner #banner-reason[hidden]{display:none}
+body.manual-restart #banner-reason{font-size:12px;margin-bottom:5px}
+@media(max-height:480px),(max-width:640px){.match-banner #banner-reason{font-size:10px;margin-bottom:4px}}
 @media(max-width:700px),(max-height:600px){.replay-heading{top:12px;left:auto;right:15px;transform:none;padding:9px 12px;font-size:10px}.replay-heading>span:last-child{display:none}.replay-footer{right:18px;bottom:18px;min-width:155px}}
 
 /* Practice keeps the drill objective visible without covering the shooting lane. */

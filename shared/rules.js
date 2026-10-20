@@ -47,14 +47,49 @@ export function segmentCircleContact(start,end,centre,radius) {
   return t>=0&&t<=1?t:null;
 }
 
+// How far the foot path cuts inside a circular footprint (0 = grazing the edge).
+export function segmentCircleDepth(start,end,centre,radius) {
+  const dx=end.x-start.x,dz=end.z-start.z,a=dx*dx+dz*dz;
+  const t=a<1e-10?0:clamp(((centre.x-start.x)*dx+(centre.z-start.z)*dz)/a,0,1);
+  return radius-Math.hypot(start.x+dx*t-centre.x,start.z+dz*t-centre.z);
+}
+
+// Contact tuning. Standing tackles use a tighter leg footprint than slides; a
+// foot that only clips the edge from the front or side is play-on, and a ball
+// reached within a short margin after the leg counts as a contested clean win.
+// Challenges from behind never receive either allowance.
+export const CHALLENGE = {
+  standingRadius:0.4,slideRadius:0.54,
+  standingLight:0.11,slideLight:0,
+  standingMargin:0.22,slideMargin:0.12,
+  behindDot:-0.3
+};
+
 export function challengeContacts(s,p,start,end,sliding=false) {
+  const radius=sliding?CHALLENGE.slideRadius:CHALLENGE.standingRadius;
   let opponent=null,opponentTime=Infinity;
   for(const q of s.players) {
     if(q.team===p.team)continue;
-    const t=segmentCircleContact(start,end,q,sliding?0.54:0.46);
+    const t=segmentCircleContact(start,end,q,radius);
     if(t!==null&&t<opponentTime){opponent=q;opponentTime=t;}
   }
   const owner=s.ball.owner===null?null:s.players[s.ball.owner];
-  const ballTime=s.ball.y<=0.65&&owner?.team!==p.team?segmentCircleContact(start,end,s.ball,sliding?0.3:0.26):null;
-  return {opponent,opponentTime,ballTime,ballFirst:ballTime!==null&&ballTime<=opponentTime+1e-6};
+  const ballRadius=sliding?0.3:0.26,ballLive=s.ball.y<=0.65&&owner?.team!==p.team;
+  const ballTime=ballLive?segmentCircleContact(start,end,s.ball,ballRadius):null;
+  const result={opponent,opponentTime,ballTime,ballFirst:ballTime!==null&&ballTime<=opponentTime+1e-6,contested:false,light:false,fromBehind:false,depth:0};
+  if(!opponent||result.ballFirst)return result;
+  // Was the challenger behind the opponent's body line when the challenge began?
+  const away=Math.hypot(p.x-opponent.x,p.z-opponent.z),facing=opponent.facing??0;
+  result.fromBehind=away>1e-6&&(Math.cos(facing)*(p.x-opponent.x)+Math.sin(facing)*(p.z-opponent.z))/away<CHALLENGE.behindDot;
+  result.depth=segmentCircleDepth(start,end,opponent,radius);
+  if(result.fromBehind)return result;
+  // Closely contested: the same swing reaches the ball within a small margin.
+  const length=Math.hypot(end.x-start.x,end.z-start.z),margin=sliding?CHALLENGE.slideMargin:CHALLENGE.standingMargin;
+  if(ballLive&&length>1e-6) {
+    const reach={x:end.x+(end.x-start.x)/length*margin,z:end.z+(end.z-start.z)/length*margin};
+    const t=segmentCircleContact(start,reach,s.ball,ballRadius);
+    if(t!==null&&t*(length+margin)<=opponentTime*length+margin){result.ballFirst=result.contested=true;return result;}
+  }
+  result.light=result.depth<(sliding?CHALLENGE.slideLight:CHALLENGE.standingLight);
+  return result;
 }

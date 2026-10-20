@@ -26,6 +26,37 @@ test('standing contact from behind awards a free kick with a physical explanatio
   assert.equal(s.phase,'restart');assert.equal(s.restart.type,'freeKick');assert.equal(s.restart.team,0);
   assert.equal(s.stats.fouls[1],1);assert.equal(s.stats.tackles[1],0);
   assert.equal(s.restart.reasonCode,'foul');assert.match(s.restart.reason,/standing tackle.*before the ball/);
+  assert.match(s.restart.reason,/^Trip from behind:/);
+  assert.deepEqual({...s.restart.foul,x:undefined,z:undefined},{offender:13,victim:9,kind:'trip',label:'Trip from behind',x:undefined,z:undefined});
+  assert.ok(Math.abs(s.restart.foul.x)<.3&&Math.abs(s.restart.foul.z)<.3);
+});
+
+test('light edge contact from the front is play-on, not a foul',()=>{
+  const {s,owner}=fixture({x:1.3,z:.33});tick(s,{...neutralInput(),tackle:true});
+  assert.equal(s.phase,'playing');assert.equal(s.stats.fouls[1],0);assert.equal(s.stats.tackles[1],0);assert.equal(s.ball.owner,owner.id);
+});
+
+test('a side-on challenge reaching the ball just after the leg is a contested clean tackle',()=>{
+  const {s,defender}=fixture({x:.25,z:1.5,facing:-Math.PI/2});s.ball.x=.45;
+  tick(s,{...neutralInput(),tackle:true});
+  assert.equal(s.phase,'playing');assert.equal(s.stats.fouls[1],0);assert.equal(s.stats.tackles[1],1);
+  assert.equal(s.ball.lastTouch,defender.id);assert.match(s.event.text,/close challenge/);
+});
+
+test('the same side-on leg contact without reaching the ball is a late standing tackle',()=>{
+  const {s}=fixture({x:.25,z:1.5,facing:-Math.PI/2});s.ball.x=1.4;
+  tick(s,{...neutralInput(),tackle:true});
+  assert.equal(s.phase,'restart');assert.equal(s.stats.fouls[1],1);assert.match(s.restart.reason,/^Late standing tackle:.*legs before the ball/);
+  assert.equal(s.restart.foul.kind,'lateTackle');
+});
+
+test('AI defenders behind the ball carrier jockey instead of tripping',()=>{
+  for(const seed of [1,2,17,1729]) {
+    const {s,owner,defender}=fixture({x:-1.2,facing:0,seed});
+    for(let i=0;i<45&&s.phase==='playing';i++)stepMatch(s,[neutralInput(),null],DT);
+    assert.equal(s.stats.fouls[1],0,`seed ${seed}`);
+    assert.ok(s.stats.tackles[1]===1||defender.x>owner.x-.3,`seed ${seed}: defender should work round to the ball side`);
+  }
 });
 
 test('an offside attacker cannot bypass involvement by playing a pass with a standing or sliding boot',()=>{
