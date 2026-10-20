@@ -1,0 +1,10 @@
+{
+  "name": "Touchline Eleven play-test server",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "forwardPorts": [8787],
+  "portsAttributes": {
+    "8787": {"label": "Touchline Eleven", "onAutoForward": "notify"}
+  },
+  "postCreateCommand": "npm ci --omit=dev && npm run build",
+  "postAttachCommand": "(sleep 6 && gh codespace ports visibility 8787:public -c \"$CODESPACE_NAME\" && echo 'Port 8787 is public: share the forwarded address from the Ports tab.') & npm start"
+}

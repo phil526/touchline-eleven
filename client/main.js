@@ -89,7 +89,7 @@ let mapWasPaused=false;
 document.querySelectorAll('[data-open-shots]').forEach(button=>button.onclick=()=>{mapWasPaused=paused;if(!online)paused=true;shotMap.show(practice?.shots||state?.shotLog||[]);openDialog('shot-map-dialog');});
 $('shot-map-dialog').addEventListener('close',()=>{paused=mapWasPaused;});
 $('rematch').onclick=()=>{if(online){net.rematch();$('rematch').disabled=true;$('rematch-status').textContent='Your rematch vote is in. Waiting for your opponent.';}else startOffline();};$('results-home').onclick=home;
-const defaultServer=location.port==='5173'?`${location.protocol==='https:'?'wss':'ws'}://${location.hostname}:8787/ws`:location.hostname==='localhost'||/^\d+\.\d+\.\d+\.\d+$/.test(location.hostname)?`${location.protocol==='https:'?'wss':'ws'}://${location.host}/ws`:'';
+const defaultServer=location.port==='5173'?`${location.protocol==='https:'?'wss':'ws'}://${location.hostname}:8787/ws`:location.hostname==='localhost'||/^\d+\.\d+\.\d+\.\d+$/.test(location.hostname)||location.hostname.endsWith('.app.github.dev')?`${location.protocol==='https:'?'wss':'ws'}://${location.host}/ws`:'';
 $('server-url').value=query.get('server')||defaultServer;$('room-code').value=query.get('room')||'';
 function roomUpdate(room){
  if(!room){$('room-details').hidden=true;return;}team=room.team;$('room-details').hidden=false;$('room-display').textContent=room.code;$('online-team').value=room.settings.hostTeam;$('online-duration').value=room.settings.duration;$('online-tactic').value=room.settings.tactics?.[team]||'balanced';$('online-team').disabled=!room.host;$('online-duration').disabled=!room.host;

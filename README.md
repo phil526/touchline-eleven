@@ -88,6 +88,8 @@ Disconnects reserve a slot for 20 seconds and allow token-based reconnection in 
 
 **Multiplayer:** deploy the entire source to a host that supports a persistent Node process and WebSocket upgrades. Run `npm ci --omit=dev`, `npm run build`, then `npm start`. Use one process for this prototype. Rooms are in memory; restarting the process closes them. Do not distribute connections across independent workers without room-aware routing.
 
+**Play-testing online with GitHub Codespaces:** on the repository page choose **Code → Codespaces → Create codespace on main**. The included `.devcontainer` installs, builds and starts the server on port 8787 and makes that port public. Open the **Ports** tab, copy the forwarded `https://…-8787.app.github.dev` address and share it; both players open it, one hosts a room and the other joins with the room code (the multiplayer address fills itself in). If the port still shows *Private*, right-click it and choose **Port Visibility → Public**. The server stops when the codespace stops (by default after 30 minutes without activity in the codespace itself), so keep the codespace tab open during a session or raise the idle timeout in your GitHub Codespaces settings.
+
 Copy `.env.example` to `.env` and adjust the port, binding and trusted browser origins. Start with `node --env-file=.env server/index.js` to load it. No private keys or accounts are needed. Example:
 
 ```dotenv
